@@ -1,0 +1,18 @@
+[app-server]
+IP  : 192.168.1.2
+User: rbs
+Pass: p@ssw0rd
+
+Portainer-URL : https://192.168.1.2:9000
+Portainer-User: admin
+Portainer-Pass: p@ssw0rd
+
+Webmin-URL : https://192.168.1.2:10000
+Webmin-User: lguiligan
+Webmin-Pass: p@ssw0rd
+
+[db-server]
+Type: MS SQL SERVER
+IP  : 110.100.210.7
+User: sa
+Pass: 1paSsword1

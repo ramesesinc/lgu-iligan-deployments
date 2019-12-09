@@ -53,4 +53,5 @@ services:
       - ./etracs/server/dev_modules:/apps/server/workspace/services/modules
       - ./etracs/server/datasources:/apps/server/workspace/services/datasources
       - ./etracs/server/adapters:/apps/server/workspace/services/apps/etracs25/adapters/ext
+      - ./etracs/server/connections:/apps/server/workspace/services/apps/etracs25/connections/ext
       - ./etracs/server/modules:/apps/server/workspace/services/apps/etracs25/modules

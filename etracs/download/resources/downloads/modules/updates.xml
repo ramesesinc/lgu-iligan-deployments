@@ -20,16 +20,34 @@ socketio.host=192.168.1.2:7080
 </env>
 <modules> 
 
-	<!-- custom libraries -->
-	<module file="custom/gov-lgu-zamboanga-af56.jar" version="1.03"/>
-	<module file="custom/gov-lgu-zamboanga-af51.jar" version="1.00"/>
-	<module file="custom/gov-lgu-zamboanga-logo.jar" version="1.00"/>
-	<module file="custom/gov-zamboanga-treasury-mtop.jar" version="1.00"/>
-	<module file="custom/gov-zamboanga-treasury-ovs.jar" version="1.00"/>
-	<module file="custom/gov-zamboanga-treasury-bpls.jar" version="1.00"/>
-	<module file="custom/gov-zamboanga-support.jar" version="1.07"/>
-	<module file="custom/gov-zamboanga-treasury-reports.jar" version="1.01"/>
-	<module file="custom/gov-zamboanga-treasury-main.jar" version="1.00"/>
+	<!-- custom modules -->
+	<module file="custom/gov-lgu-iligan-treasury-form51.jar" version="1.0"/>
+	<module file="custom/iligan-deposit-slip.jar" version="1.3"/>
+	<module file="custom/iligan-depositslip-reports.jar" version="1.0"/>
+	<module file="custom/gov-iligan-treasury-checkdeposit.jar" version="1.0"/>
+	<module file="custom/gov-lgu-iligan-bpls-reports.jar" version="1.0"/>
+	<module file="custom/gov-lgu-iligan-bpls.jar" version="1.1"/>
+	<module file="custom/gov-lgu-iligan-ctc.jar" version="1.2"/>
+	<module file="custom/gov-lgu-iligan-treasury.jar" version="1.1"/>
+	<module file="custom/gov-lgu-iligan-main.jar" version="1.0"/>	
+	<module file="custom/gov-lgu-iligan.jar" version="1.65"/>
+	<module file="custom/anne-bpls-report.jar" version="2.8"/>
+	<module file="custom/rameses-gov-etracs-sre-iligan.jar" version="2.3"/>
+
+	<!-- rptis custom libraries -->
+    <module file="custom/iligan-landtax-custom-billing.jar" version="1.0"/>
+	<module file="custom/rptis-iligan-assessment-report.jar" version="1.0"/>	
+	<module file="custom/rptcertification-iligancustom.jar" version="1.2"/>
+	<module file="custom/gov-lgu-iligan-rptis-landtax.jar" version="1.0"/>
+	<module file="custom/gov-lgu-iligan-rptis-certiciation.jar" version="1.0"/>
+	<module file="custom/gov-lgu-iligan-rptis-report-rpa.jar" version="1.0"/>
+	<module file="custom/gov-lgu-iligan-rptis-report-taxdec.jar" version="1.1"/>
+	<module file="custom/gov-lgu-iligan-rptis.jar" version="1.4"/>
+	<module file="custom/rptdelinquentnopenalty.jar" version= "1.2"/>
+
+ 
+	<!-- 3rd party libs --> 
+	<module file="libs/commons-net-3.5.jar" version="2.5"/>
 
 	<!-- core libraries -->
 	<module file="core/osiris2-client-themes.jar" version="2.60"/>
@@ -92,5 +110,8 @@ socketio.host=192.168.1.2:7080
 	
 	<!-- plugins -->	
 	<module file="plugins/rameses-queueing.jar" version="2.60"/> 
+	<module file="plugins/bpfacility-client.jar" version="1.3"/>
+	<module file="plugins/rameses-gov-etracs-ctc.jar" version="2.21"/>
+	<module file="plugins/rameses-gov-etracs-waterworks-collection-proxy.jar" version="1.0"/>
 </modules>
 </app>

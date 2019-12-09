@@ -50,8 +50,8 @@ services:
       - "8070:8070"
       - "8080:8080"
     volumes:
-      - ./etracs/server/dev_modules:/apps/server/workspace/services/modules
-      - ./etracs/server/datasources:/apps/server/workspace/services/datasources
-      - ./etracs/server/adapters:/apps/server/workspace/services/apps/etracs25/adapters/ext
-      - ./etracs/server/connections:/apps/server/workspace/services/apps/etracs25/connections/ext
-      - ./etracs/server/modules:/apps/server/workspace/services/apps/etracs25/modules
+      - ./server/dev_modules:/apps/server/workspace/services/modules
+      - ./server/datasources:/apps/server/workspace/services/datasources
+      - ./server/adapters:/apps/server/workspace/services/apps/etracs25/adapters/ext
+      - ./server/connections:/apps/server/workspace/services/apps/etracs25/connections/ext
+      - ./server/modules:/apps/server/workspace/services/apps/etracs25/modules

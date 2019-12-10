@@ -15,12 +15,16 @@ ws.host=110.100.210.9:8060
 
 entity.app.host=110.100.210.9:8070
 entity.app.context=etracs25
+report.custom=iligan
 
 socketio.host=110.100.210.9:7080
 </env>
 <modules> 
 
 	<!-- custom modules -->
+	<module file="custom/gov-iligan-rptis-report-faases.jar" version="1.0"/>
+	<module file="custom/gov-lgu-iligan-rptis-certiciation.jar" version="1.0"/>
+	<module file="custom/gov-iligan-rptis-report-noca.jar" version="1.0"/>
 	<module file="custom/gov-lgu-iligan-treasury-form51.jar" version="1.0"/>
 	<module file="custom/iligan-deposit-slip.jar" version="1.3"/>
 	<module file="custom/iligan-depositslip-reports.jar" version="1.0"/>
@@ -29,7 +33,7 @@ socketio.host=110.100.210.9:7080
 	<module file="custom/gov-lgu-iligan-bpls.jar" version="1.1"/>
 	<module file="custom/gov-lgu-iligan-ctc.jar" version="1.2"/>
 	<module file="custom/gov-lgu-iligan-treasury.jar" version="1.1"/>
-	<module file="custom/gov-lgu-iligan-main.jar" version="1.0"/>	
+	<module file="custom/gov-lgu-iligan-main.jar" version="1.1"/>	
 	<module file="custom/gov-lgu-iligan.jar" version="1.65"/>
 	<module file="custom/anne-bpls-report.jar" version="2.8"/>
 	<module file="custom/rameses-gov-etracs-sre-iligan.jar" version="2.3"/>
@@ -102,10 +106,10 @@ socketio.host=110.100.210.9:7080
 
 	<!-- rptis -->
 	<module file="rameses-gov-etracs-rptis-city.jar" version="2.60"/>
-	<module file="rameses-gov-etracs-rptis-landtax.jar" version="2.63"/>
-	<module file="rameses-gov-etracs-rptis-landtax-report.jar" version="2.61"/>
-	<module file="rameses-gov-etracs-rptis.jar" version="2.66"/>
-	<module file="rameses-gov-etracs-rptis-report.jar" version="2.61"/>
+	<module file="rameses-gov-etracs-rptis-landtax.jar" version="2.64"/>
+	<module file="rameses-gov-etracs-rptis-landtax-report.jar" version="2.62"/>
+	<module file="rameses-gov-etracs-rptis.jar" version="2.67"/>
+	<module file="rameses-gov-etracs-rptis-report.jar" version="2.62"/>
 	<module file="rameses-gov-etracs-signatory-template.jar" version="2.60"/>
 	
 	<!-- plugins -->	

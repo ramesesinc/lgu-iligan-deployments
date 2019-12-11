@@ -50,6 +50,7 @@ services:
       - "8070:8070"
       - "8080:8080"
     volumes:
+      - ./server/server.conf:/apps/server/bin/server.conf
       - ./server/dev_modules:/apps/server/workspace/services/modules
       - ./server/datasources:/apps/server/workspace/services/datasources
       - ./server/adapters:/apps/server/workspace/services/apps/etracs25/adapters/ext

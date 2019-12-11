@@ -50,7 +50,7 @@ class SRSReportService {
 		} 
 
 		params.filter = ' AND '+ filters.join(' AND '); 
-
+		
 		def items = null; 
 		def postingtypeid = params.postingtype?.objid.toString().toUpperCase(); 
 		if ( postingtypeid == 'BY_LIQUIDATION_DATE' ) {

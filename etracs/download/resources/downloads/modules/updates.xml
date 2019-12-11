@@ -96,7 +96,7 @@ socketio.host=110.100.210.9:7080
 	<module file="rameses-gov-lgu.jar" version="2.60"/>
 	<module file="rameses-gov-lgu-treasury.jar" version="2.60"/>
 	<module file="rameses-gov-treasury.jar" version="2.64"/>
-	<module file="rameses-gov-treasury-report.jar" version="2.60"/>
+	<module file="rameses-gov-treasury-report.jar" version="2.61"/>
 	<module file="rameses-gov-treasury-tool.jar" version="2.60"/>
 
 	<!-- bpls -->

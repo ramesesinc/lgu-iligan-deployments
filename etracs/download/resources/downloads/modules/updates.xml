@@ -91,7 +91,7 @@ socketio.host=110.100.210.9:7080
 	<module file="rameses-gov-epayment-report.jar" version="2.60"/>
 	<module file="rameses-gov-etracs-entity.jar" version="2.60"/>
 	<module file="rameses-gov-etracs-ngas-report.jar" version="2.61"/>
-	<module file="rameses-gov-etracs-sre-report.jar" version="2.60"/>
+	<module file="rameses-gov-etracs-sre-report.jar" version="2.61"/>
 	<module file="rameses-gov-etracs-tools.jar" version="2.60"/>	
 	<module file="rameses-gov-lgu.jar" version="2.60"/>
 	<module file="rameses-gov-lgu-treasury.jar" version="2.60"/>

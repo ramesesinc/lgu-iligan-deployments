@@ -23,7 +23,7 @@ socketio.host=110.100.210.9:7080
 
 	<!-- custom modules -->
 	<module file="custom/gov-lgu-iligan-rptis-report-taxdec.jar" version="1.5"/>
-	<module file="custom/gov-iligan-rptis-report-faases.jar" version="1.1"/>
+	<module file="custom/gov-iligan-rptis-report-faases.jar" version="1.2"/>
 	<module file="custom/gov-lgu-iligan-rptis-certiciation.jar" version="1.0"/>
 	<module file="custom/gov-iligan-rptis-report-noca.jar" version="1.0"/>
 	<module file="custom/gov-lgu-iligan-treasury-form51.jar" version="1.0"/>

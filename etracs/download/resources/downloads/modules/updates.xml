@@ -59,14 +59,14 @@ socketio.host=110.100.210.9:7080
 	<module file="core/osiris2-draw.jar" version="2.60"/>
 	<module file="core/osiris2-framework.jar" version="2.60"/>
 	<module file="core/osiris2-report.jar" version="2.60"/>
-	<module file="core/rameses-client-ui.jar" version="2.62"/>
+	<module file="core/rameses-client-ui.jar" version="2.63"/>
 	<module file="core/rameses-client-ui-bio.jar" version="2.60"/>
 	<module file="core/rameses-client-ui-jfx.jar" version="2.60"/>
 	<module file="core/rameses-client-notification-socketio.jar" version="2.60"/>
 	<module file="core/rameses-common2.jar" version="2.60"/>
 	<module file="core/rameses-custom-impl.jar" version="2.60"/>
 	<module file="core/rameses-jdbc16.jar" version="2.60"/>
-	<module file="core/rameses-seti.jar" version="2.61"/>
+	<module file="core/rameses-seti.jar" version="2.62"/>
  
 	<!-- shared libraries -->
 	<module file="shared/client-system.jar" version="2.60"/>

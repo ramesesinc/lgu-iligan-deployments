@@ -115,7 +115,7 @@ socketio.host=110.100.210.9:7080
 	<!-- plugins -->	
 	<module file="plugins/rameses-queueing.jar" version="2.60"/> 
 	<module file="plugins/bpfacility-client.jar" version="1.3"/>
-	<module file="plugins/rameses-gov-etracs-ctc.jar" version="2.21"/>
+	<module file="plugins/rameses-gov-etracs-ctc.jar" version="2.22"/>
 	<module file="plugins/rameses-gov-etracs-waterworks-collection-proxy.jar" version="1.0"/>
 </modules>
 </app>

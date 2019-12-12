@@ -81,19 +81,16 @@ from (
 
 	union all 
 
-	select 
+	select distinct 
 		a.objid, a.code, a.title, a.type, 
 		a.leftindex, a.rightindex, a.level, 
-		a.maingroupid, null as amount, sum(ait.target) as target 
-	from account a 
-		inner join account_item_mapping aim on aim.acctid = a.objid 
-		inner join account_incometarget ait on ait.itemid = aim.itemid 
-	where a.maingroupid = $P{maingroupid} 
-		and ait.year = YEAR($P{startdate}) 
-	group by 
-		a.objid, a.code, a.title, a.type, 
-		a.leftindex, a.rightindex, a.level, 
-		a.maingroupid 		
+		a.maingroupid, null as amount, 
+		t.target 
+	from account_item_mapping aim 
+		inner join account_incometarget t on t.itemid = aim.acctid 
+		inner join account a on a.objid = aim.acctid
+	where aim.maingroupid = $P{maingroupid} 
+		and t.year = YEAR($P{startdate}) 
 )t1 
 group by 
 	t1.objid, t1.code, t1.title, t1.type, 
@@ -160,19 +157,16 @@ from (
 
 	union all 
 
-	select 
+	select distinct 
 		a.objid, a.code, a.title, a.type, 
 		a.leftindex, a.rightindex, a.level, 
-		a.maingroupid, null as amount, sum(ait.target) as target 
-	from account a 
-		inner join account_item_mapping aim on aim.acctid = a.objid 
-		inner join account_incometarget ait on ait.itemid = aim.itemid 
-	where a.maingroupid = $P{maingroupid} 
-		and ait.year = YEAR($P{startdate}) 
-	group by 
-		a.objid, a.code, a.title, a.type, 
-		a.leftindex, a.rightindex, a.level, 
-		a.maingroupid 		
+		a.maingroupid, null as amount, 
+		t.target 
+	from account_item_mapping aim 
+		inner join account_incometarget t on t.itemid = aim.acctid 
+		inner join account a on a.objid = aim.acctid
+	where aim.maingroupid = $P{maingroupid} 
+		and t.year = YEAR($P{startdate}) 
 )t1 
 group by 
 	t1.objid, t1.code, t1.title, t1.type, 

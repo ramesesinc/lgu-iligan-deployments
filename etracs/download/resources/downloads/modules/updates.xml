@@ -1,6 +1,6 @@
 <app>
 <env>
-app.title=ETRACS 2.5 build 05 20191211_1114 (City of Iligan)
+app.title=ETRACS 2.5 build 05 20191212_1211 (City of Iligan)
 app.host=110.100.210.9:8070
 app.cluster=osiris3
 app.context=etracs25
@@ -22,6 +22,7 @@ socketio.host=110.100.210.9:7080
 <modules> 
 
 	<!-- custom modules -->
+	<module file="custom/gov-lgu-iligan-af56.jar" version="1.0"/>
 	<module file="custom/gov-lgu-iligan-rptis-report-taxdec.jar" version="1.5"/>
 	<module file="custom/gov-iligan-rptis-report-faases.jar" version="1.2"/>
 	<module file="custom/gov-lgu-iligan-rptis-certiciation.jar" version="1.0"/>
@@ -79,7 +80,7 @@ socketio.host=110.100.210.9:7080
 	<module file="shared/rameses-enterprise-admin.jar" version="2.61"/>
 	<module file="shared/rameses-enterprise-entity.jar" version="2.60"/>
 	<module file="shared/rameses-enterprise-entity-tool.jar" version="2.62"/>
-	<module file="shared/rameses-enterprise-financial.jar" version="2.61"/>
+	<module file="shared/rameses-enterprise-financial.jar" version="2.62"/>
  
 	<!-- main app libraries -->
 	<module file="rameses-treasury-common.jar" version="2.60"/>
@@ -90,8 +91,8 @@ socketio.host=110.100.210.9:7080
 	<module file="rameses-gov-epayment.jar" version="2.60"/>
 	<module file="rameses-gov-epayment-report.jar" version="2.60"/>
 	<module file="rameses-gov-etracs-entity.jar" version="2.60"/>
-	<module file="rameses-gov-etracs-ngas-report.jar" version="2.61"/>
-	<module file="rameses-gov-etracs-sre-report.jar" version="2.60"/>
+	<module file="rameses-gov-etracs-ngas-report.jar" version="2.62"/>
+	<module file="rameses-gov-etracs-sre-report.jar" version="2.61"/>
 	<module file="rameses-gov-etracs-tools.jar" version="2.60"/>	
 	<module file="rameses-gov-lgu.jar" version="2.60"/>
 	<module file="rameses-gov-lgu-treasury.jar" version="2.60"/>

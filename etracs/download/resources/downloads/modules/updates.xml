@@ -80,7 +80,7 @@ socketio.host=110.100.210.9:7080
 	<module file="shared/rameses-enterprise-admin.jar" version="2.61"/>
 	<module file="shared/rameses-enterprise-entity.jar" version="2.60"/>
 	<module file="shared/rameses-enterprise-entity-tool.jar" version="2.62"/>
-	<module file="shared/rameses-enterprise-financial.jar" version="2.61"/>
+	<module file="shared/rameses-enterprise-financial.jar" version="2.62"/>
  
 	<!-- main app libraries -->
 	<module file="rameses-treasury-common.jar" version="2.60"/>

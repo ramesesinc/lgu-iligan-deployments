@@ -55,7 +55,7 @@ from (
 
 	select 
 		cv.objid as refid, cv.controldate as refdate, cv.controlno as refno, 'liquidation' as reftype, cs.refitem_objid as acctid, 
-		(select item_fund_objid from cashreceiptitem where receiptid = c.objid and item_objid = cs.refitem_objid limit 1) as fundid, 
+		(select top 1 item_fund_objid from cashreceiptitem where receiptid = c.objid and item_objid = cs.refitem_objid) as fundid, 
 		-cs.amount as amount, c.org_objid as orgid, c.collector_objid as collectorid, c.remittanceid, r.controldate as remittancedate 
 	from collectionvoucher cv 
 		inner join remittance r on r.collectionvoucherid = cv.objid 
@@ -84,5 +84,5 @@ from (
 		c.org_objid, c.collector_objid, c.remittanceid, r.controldate 
 )t1 
 group by 
-	refid, refdate, refno, reftype, acctid, fundid,
+	refid, refdate, refno, reftype, acctid, fundid, 
 	orgid, collectorid, remittanceid, remittancedate 

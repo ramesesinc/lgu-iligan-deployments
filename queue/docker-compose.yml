@@ -20,5 +20,4 @@ services:
     volumes:
       - ./res/anubis-cms2.jar:/apps/server/lib/anubis-cms2.jar
       - ./res/ws_queue_listener:/apps/server/workspace/services/apps/queue/connections/ws_queue_listener
-      - ./res/lgu-logo.png:/apps/server/workspace/web/monitor.queue/res/images/agent-logo.png
-      - ./res/project.conf:/apps/server/workspace/web/monitor.queue/project.conf
+      - ./res/monitor.queue:/apps/server/workspace/web/monitor.queue

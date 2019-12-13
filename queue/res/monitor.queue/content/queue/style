@@ -1,0 +1,40 @@
+<style>
+html {
+   overflow: hidden;
+}
+div.video-panel {
+	background: #0066cc;
+	text-align: center;
+	min-height: 70vh;
+	min-width: 50vw;
+}
+#video {
+	margin:0; padding:0; 
+} 
+
+#waitlist_header { 
+	color: maroon;
+	background-color: #d0d0d0;
+	padding:2px; font-weight:bold;
+	text-align: center;
+}
+#waitlist_item {
+	display:none; 
+	padding:10px;
+	font-size:18pt;
+	text-align:center;
+}
+
+.footer-leftside {
+  display: inline-block;
+  width:70%;
+  height: 90px;
+}
+.footer-rightside{
+  background-color: #ffffff;
+  display: inline-block;
+  width: 30%;
+  float: right;
+  height: 90px;
+}
+</style>

@@ -1,0 +1,15 @@
+
+	<div id="footer">
+	
+			<div class="footer-leftside" id="footer-body">
+				<marquee behavior="scroll" scrollamount="11">
+					<h3 class="announcement" disp> 
+						Welcome to ${PROJECT['lgu.name']}. 
+					</h3> 
+				</marquee> 
+			</div>
+			<div class="footer-rightside waitlist-panel">
+				<div id="waitlist_header"> Next Ticket Number </div> 
+			</div>
+	
+	</div>

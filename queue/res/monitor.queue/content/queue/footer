@@ -1,0 +1,16 @@
+
+	<div id="footer">
+	
+			<div class="footer-leftside" id="footer-body">
+				<marquee behavior="scroll" scrollamount="11">
+					<h4 class="announcement" disp> 
+						Welcome to Iligan City.
+						Welcome to Iligan City.
+						Welcome to Iligan City.
+					</h4> 
+				</marquee> 
+			</div>
+			<div class="footer-rightside waitlist-panel">
+				<div id="waitlist_header"> Next Ticket Number </div> 
+			</div>
+	</div>

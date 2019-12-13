@@ -107,6 +107,8 @@ public class BusinessBillingService  {
 			facts << app;
 		}
 
+		def qtrdates = [];
+
 		//insert the deadline facts
 		def years = o.taxfees*.year; 
 		years << currYear; 
@@ -114,8 +116,9 @@ public class BusinessBillingService  {
 			(1..4).each { q->
 				def qtr = new QtrDeadline(y, q);	
 				qtr.deadline = expiryDateSvc.findExpiryDate( [year:y, qtr:q] );
-				facts << qtr;
-			}
+				qtrdates << [ qtr: q, duedate: qtr.deadline ]; 
+				facts << qtr; 
+			} 
 		}
 
 		def result = ruleSvc.execute( facts );
@@ -156,7 +159,8 @@ public class BusinessBillingService  {
 		def r = summarizeTotals( newtaxfees ); 
 		return [ 
 			taxfees: newtaxfees, excess: result.excess, totals: r, 
-			expirydate: result.validUntil, nextbilldate: result.validUntil  
+			expirydate: result.validUntil, nextbilldate: result.validUntil, 
+			qtrdates: qtrdates 
 		]; 
 	} 
 

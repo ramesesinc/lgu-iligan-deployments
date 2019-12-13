@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  
+  queue-server:
+    image: ramesesinc/queue-server:255.01.001
+    container_name: queue-server
+    restart: always
+
+    logging: 
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
+
+    ports:
+      - "9999:8080"
+      - "9970:8070"
+
+    volumes:
+      - ./res/anubis-cms2.jar:/apps/server/lib/anubis-cms2.jar
+      - ./res/ws_queue_listener:/apps/server/workspace/services/apps/queue/connections/ws_queue_listener
+      - ./res/lgu-logo.png:/apps/server/workspace/web/monitor.queue/res/images/agent-logo.png
+      - ./res/project.conf:/apps/server/workspace/web/monitor.queue/project.conf

@@ -1,6 +1,6 @@
 <app>
 <env>
-app.title=ETRACS 2.5 build 05 20191212_2024 (City of Iligan)
+app.title=ETRACS 2.5 build 05 20191213_1200 (City of Iligan)
 app.host=110.100.210.9:8070
 app.cluster=osiris3
 app.context=etracs25
@@ -32,7 +32,7 @@ socketio.host=110.100.210.9:7080
 	<module file="custom/iligan-depositslip-reports.jar" version="1.0"/>
 	<module file="custom/gov-iligan-treasury-checkdeposit.jar" version="1.0"/>
 	<module file="custom/gov-lgu-iligan-bpls-reports.jar" version="1.0"/>
-	<module file="custom/gov-lgu-iligan-bpls.jar" version="1.1"/>
+	<module file="custom/gov-lgu-iligan-bpls.jar" version="1.02"/>
 	<module file="custom/gov-lgu-iligan-ctc.jar" version="1.2"/>
 	<module file="custom/gov-lgu-iligan-treasury.jar" version="1.1"/>
 	<module file="custom/gov-lgu-iligan-main.jar" version="1.1"/>	
@@ -101,7 +101,7 @@ socketio.host=110.100.210.9:7080
 	<module file="rameses-gov-treasury-tool.jar" version="2.61"/>
 
 	<!-- bpls -->
-	<module file="rameses-gov-etracs-bpls.jar" version="2.60"/>
+	<module file="rameses-gov-etracs-bpls.jar" version="2.61"/>
 	<module file="rameses-gov-etracs-bpls-ceo.jar" version="2.60"/>
 	<module file="rameses-gov-etracs-bpls-reports.jar" version="2.60"/>
 

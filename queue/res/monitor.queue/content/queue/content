@@ -60,9 +60,7 @@ sections.each{ o->
 		<div class="wrap"> <!-- open wrap --> 
 		  	<div class="video-panel video">
 			    <video id="video" muted>
-			      <source src="http://192.168.0.4/shared/videos/lgutanjay.mp4" type="video/mp4">
-			      <source src="http://192.168.0.4/shared/videos/justforlaughs002.mp4" type="video/mp4">
-			      <source src="http://192.168.0.4/shared/videos/36hacks.mp4" type="video/mp4">
+			       ${_videos}
 			    </video>
 			</div> 
 			<div class="servedQueue"> <!-- open servedQueue -->
@@ -92,9 +90,9 @@ sections.each{ o->
 
 	</div><!-- close content -->	
 
-	${_footer3}
+	${_footer}
 
 </div> <!-- close wrapper -->
 
 ${_script}
-${_style2}
+${_style}

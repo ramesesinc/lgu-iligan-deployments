@@ -17,6 +17,6 @@ services:
       - "9999:8080"
       - "9970:8070"
 
-#    volumes:
-#      - ./res/ws_queue_listener:/apps/server/workspace/services/apps/queue/connections/ws_queue_listener
-#      - ./res/project.conf:/apps/server/workspace/web/monitor.queue/project.conf
+    volumes:
+      - ./res/ws_queue_listener:/apps/server/workspace/services/apps/queue/connections/ws_queue_listener
+      - ./res/project.conf:/apps/server/workspace/web/monitor.queue/project.conf

@@ -17,7 +17,7 @@ services:
       - "9980:80"
     volumes:
       - ./www/conf.d:/etc/nginx/conf.d
-      - ./www/resources:/resources
+      - /home/rbs/queue_resources:/resources
 
 
   queue-server:

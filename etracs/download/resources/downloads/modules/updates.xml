@@ -1,6 +1,6 @@
 <app>
 <env>
-app.title=ETRACS 2.5 build 05 20191213_1348 (City of Iligan)
+app.title=ETRACS 2.5 build 05 20191218_1100 (City of Iligan)
 app.host=110.100.210.9:8070
 app.cluster=osiris3
 app.context=etracs25
@@ -97,7 +97,7 @@ socketio.host=110.100.210.9:7080
 	<module file="rameses-gov-etracs-tools.jar" version="2.60"/>	
 	<module file="rameses-gov-lgu.jar" version="2.60"/>
 	<module file="rameses-gov-lgu-treasury.jar" version="2.60"/>
-	<module file="rameses-gov-treasury.jar" version="2.66"/>
+	<module file="rameses-gov-treasury.jar" version="2.67"/>
 	<module file="rameses-gov-treasury-report.jar" version="2.63"/>
 	<module file="rameses-gov-treasury-tool.jar" version="2.61"/>
 

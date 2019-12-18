@@ -155,6 +155,10 @@ class LiquidationReportService  {
 		if( ! data.acctsummaries ) throw new Exception("No record(s) found ");
 
 		data.amount = data.acctsummaries.amount.sum(); 
+
+		// resolve data compatibility 
+		data.txnno = data.controlno; 
+		data.remittancedate = data.controldate;
 		return data;
 	}
 

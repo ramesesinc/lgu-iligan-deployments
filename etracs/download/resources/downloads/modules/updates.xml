@@ -42,12 +42,12 @@ socketio.host=110.100.210.9:7080
 	<module file="custom/rameses-gov-etracs-sre-iligan.jar" version="2.3"/>
 
 	<!-- rptis custom libraries -->
-    <module file="custom/iligan-landtax-custom-billing.jar" version="1.0"/>
-	<module file="custom/rptis-iligan-assessment-report.jar" version="1.0"/>	
+    <module file="custom/iligan-landtax-custom-billing.jar" version="1.02"/>
+	<module file="custom/rptis-iligan-assessment-report.jar" version="1.00"/>	
 	<module file="custom/rptcertification-iligancustom.jar" version="1.2"/>
-	<module file="custom/gov-lgu-iligan-rptis-landtax.jar" version="1.0"/>
-	<module file="custom/gov-lgu-iligan-rptis-certiciation.jar" version="1.0"/>
-	<module file="custom/gov-lgu-iligan-rptis-report-rpa.jar" version="1.0"/>
+	<module file="custom/gov-lgu-iligan-rptis-landtax.jar" version="1.00"/>
+	<module file="custom/gov-lgu-iligan-rptis-certiciation.jar" version="1.00"/>
+	<module file="custom/gov-lgu-iligan-rptis-report-rpa.jar" version="1.00"/>
 	<module file="custom/gov-lgu-iligan-rptis.jar" version="1.4"/>
 	<module file="custom/rptdelinquentnopenalty.jar" version= "1.2"/>
 

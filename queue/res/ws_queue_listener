@@ -1,5 +1,0 @@
-provider=websocket
-ws.host=110.100.210.9:8060
-ws.protocol=queue
-ws.group=queue
-ws.enabled=true

@@ -1,0 +1,11 @@
+
+	<div id="footer">
+	
+			<div class="footer-leftside" id="footer-body">
+				<marquee behavior="scroll" scrollamount="11">
+					<h4 class="announcement" disp> 
+						Welcome to ${PROJECT['lgu.name']}
+					</h4> 
+				</marquee> 
+			</div>
+	</div>

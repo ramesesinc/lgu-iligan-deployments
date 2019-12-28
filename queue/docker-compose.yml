@@ -2,43 +2,37 @@ version: "3"
 
 services:
   
-  queue-www:
+  queue-proxy:
     image: nginx:latest
-    container_name: queue-www
+    container_name: queue-proxy
     restart: always
     logging:
       driver: "json-file"
       options: 
         max-file: "5"
         max-size: 10m
+    links:
+      - queue-server
     environment:
       TZ: "Asia/Manila"
     ports:
-      - "9980:80"
+      - "9999:9999"
     volumes:
-      - ./www/conf.d:/etc/nginx/conf.d
-      - /home/rbs/queue_resources:/resources
+      - ./proxy/conf.d:/etc/nginx/conf.d
+      - ./resources:/resources
 
 
   queue-server:
-    image: ramesesinc/queue-server:255.01.001
+    image: ramesesinc/queue-server:255.01.002
     container_name: queue-server
     restart: always
-
     logging: 
       driver: "json-file"
       options:
         max-file: "5"
         max-size: "10m"
-
-    links:
-      - queue-www
-
+    env_file:
+      - ./env.conf
     ports:
-      - "9999:8080"
+      - "9980:8080"
       - "9970:8070"
-
-    volumes:
-      - ./res/anubis-cms2.jar:/apps/server/lib/anubis-cms2.jar
-      - ./res/ws_queue_listener:/apps/server/workspace/services/apps/queue/connections/ws_queue_listener
-      - ./res/monitor.queue:/apps/server/workspace/web/monitor.queue

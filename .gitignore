@@ -5,4 +5,5 @@
 .shutdown_pid
 Thumbs.db
 updates-dev.xml
+video.conf
 *.mp4

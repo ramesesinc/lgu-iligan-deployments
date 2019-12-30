@@ -5,9 +5,6 @@ def serverDate = dateSvc.format('MMMMM dd, yyyy', dateSvc.getServerDate());
 def gSvc = SERVICE.lookup('QueueGroupService', 'main'); 
 def groups = gSvc.getGroupsWithSections(); 
 groups = groups.findAll{( it.sections )} 
-groups.each{
-	it.sections.sort{( it.index ? it.index : 0 )}
-}
 
 if ( PARAMS.group ) {
 	def o = groups.find{ it.objid.toString().equalsIgnoreCase( PARAMS.group ) } 
@@ -15,6 +12,10 @@ if ( PARAMS.group ) {
 		groups.clear(); 
 		groups << o; 
 	} 
+} 
+
+groups.each{
+	it.sections.sort{( it.sortorder ? it.sortorder : 0 )}
 } 
 %>
 
@@ -42,7 +43,7 @@ if ( PARAMS.group ) {
 		
 			<div class="screen3 resize6"> 			
 				<a class="k-button" r:context="queue" r:name="fetchNextNumber" r:param_sectionid="${s.objid}" /> 
-					<span>	${s.objid.toUpperCase()} - ${s.title}</span>
+					<span>${s.title}</span>
 				</a>
 			</div> 
 		

@@ -68,14 +68,16 @@ System.getenv().each{ k,v->
 	</div>
 	<div class="content"> <!-- open content -->	
 		<div class="wrap"> <!-- open wrap --> 
+			<!-- 
 		  	<div class="video-panel video" style="width:40vw;">
 				<video id="video" muted style="width:40vw;">
 					<% videos.each{ %>
 			  		<source src="${it}" type="video/mp4">
 			  		<% } %>
 				</video>
-			</div> 
-			<div class="servedQueue" style="margin-left:15px;"> <!-- open servedQueue -->
+			</div>
+			-->  
+			<div class="servedQueue"> <!-- open servedQueue -->
 			<% sections.each{ a-> %> 
 				<div class="serving" id="${a.objid.toLowerCase()}-section-panel"> <!-- open serving-->
 				<h1 class="dep-name">${a.title}</h1> 

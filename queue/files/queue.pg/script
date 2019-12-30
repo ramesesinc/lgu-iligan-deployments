@@ -4,6 +4,7 @@
  */
 var qsock = Socket.create('queue_poll'); 
 qsock.handlers.h = function( o ) { 
+	
 	var srcgroupid = '${PARAMS.group}'.toLowerCase();
 	if ( o == null || o.groupid == null ) return; 
 	if ( srcgroupid != o.groupid.toLowerCase() ) return; 
@@ -127,7 +128,7 @@ function WaitListFetcher() {
 		setTimeout( fetchList, 1000); 
 	}
 }
-new WaitListFetcher().run(); 
+//new WaitListFetcher().run(); 
 
 
 /*
@@ -167,6 +168,34 @@ function WaitListProc( panel ) {
 	}
 }
 \$('div.waitlist-panel').each(function(){ 
-	new WaitListProc( \$(this)).run();  
+	//new WaitListProc( \$(this)).run();  
 }); 
+
+
+/*
+   Script to fetch the Announcement
+ */
+async function fetchQueueAnnouncement() {
+	var _persistSvc = Service.lookup('PersistenceService', 'main'); 
+
+	function fetchData() {
+		var elem = \$('.announcement'); 
+		if ( elem.length > 0 ) { 
+			try { 
+				fetchDataImpl( elem ); 
+				setTimeout(fetchData, 60000);
+			} 
+			catch(e) {
+				setTimeout(fetchData, 2000);
+			}
+		} 
+	} 
+	function fetchDataImpl( elem ) {
+		var data = _persistSvc.read({_schemaname:'queue_announcement', objid:'announcement'}); 
+		elem.html( data.content );  
+	} 
+
+	fetchData();
+} 
+fetchQueueAnnouncement(); 
 </script> 

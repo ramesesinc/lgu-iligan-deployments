@@ -1,5 +1,5 @@
 <style>
-html {
+html, body {
 	overflow: hidden;
 }
 div.video-panel {

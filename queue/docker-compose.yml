@@ -39,3 +39,4 @@ services:
       - "9970:8070"
     volumes:
       - ./files/queue.pg:/apps/server/web/monitor.queue/files/queue.pg
+      - ./files/queueing.pg:/apps/server/web/monitor.queue/files/queueing.pg

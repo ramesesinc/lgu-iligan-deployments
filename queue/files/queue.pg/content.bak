@@ -46,47 +46,6 @@ System.getenv().each{ k,v->
 	if ( k.toString().startsWith('video_source_')) videos << v; 
 }
 %>
-
-<style>
-html, body {
-	overflow: hidden;
-}
-li.header-title {
-	width:70%;
-}
-div.content {
-	min-width: 1320px;
-	margin:0;
-}
-div.wrap {
-	display: block;
-}
-div.servedQueue {
-	display: -webkit-flex; /* Safari */
-  	-webkit-flex-wrap: wrap; /* Safari 6.1+ */
-  	display: flex;  
-  	flex-wrap: wrap;	
-}
-div.serving {
-	min-width: 330px;
-	max-width: 330px;
-	display: table-cell;
-	padding: 0; 
-	margin-top: 0;
-	margin-left: 5px;
-	margin-bottom: 5px;
-}
-.dep-name {
-	overflow-wrap: break-word;
-}
-.announcement {
-	font-size: 50px;
-}
-#footer {
-	background: linear-gradient(to bottom right, rgba(208, 208, 208, 0.5), rgba(140, 140, 140, 0.8))
-}
-</style>
-
 <div class="wrapper"> <!-- open wrapper -->	
 	<div class="header">	
 		<div class="container-fluid">
@@ -109,11 +68,18 @@ div.serving {
 	</div>
 	<div class="content"> <!-- open content -->	
 		<div class="wrap"> <!-- open wrap --> 
-			<div class="servedQueue"> <!-- open servedQueue -->
+		  	<div class="video-panel video" style="width:40vw;">
+				<video id="video" muted style="width:40vw;">
+					<% videos.each{ %>
+			  		<source src="${it}" type="video/mp4">
+			  		<% } %>
+				</video>
+			</div> 
+			<div class="servedQueue" style="margin-left:15px;"> <!-- open servedQueue -->
 			<% sections.each{ a-> %> 
 				<div class="serving" id="${a.objid.toLowerCase()}-section-panel"> <!-- open serving-->
-					<h1 class="dep-name">${a.title}</h1> 
-					<% 
+				<h1 class="dep-name">${a.title}</h1> 
+				<% 
 					for (int i=0; i<a.countersize; i++){ 
 						def sc_uuid = '';
 						def sc_code = '&nbsp;';
@@ -128,7 +94,7 @@ div.serving {
 						<div class="counter-container" id="${sc_uuid}-counter-panel">
 				            <h2>${sc_code} - <span id="${sc_uuid}">${sc_seriesno}</span></h2>
 				       	</div>
-					<%}%> 
+				<%}%> 
 				</div> <!-- close serving -->
 			<%}%>
 			</div> <!-- close servedQueue -->

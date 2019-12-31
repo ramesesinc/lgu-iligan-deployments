@@ -18,43 +18,94 @@ groups.each{
 	it.sections.sort{( it.sortorder ? it.sortorder : 0 )}
 } 
 
-def lguname = PROJECT.get('lgu.name'); 
+def selgroup = (groups ? groups.first() : [:]); 
 %>
 
-<link href="/themes/default/css/default/queueing.css?ver=1.0" type="text/css" rel="stylesheet">
+<style>
+.q-sections {
+	display: -webkit-flex; /* Safari */
+  	-webkit-flex-wrap: wrap; /* Safari 6.1+ */
+  	display: flex;  
+  	flex-wrap: wrap;	
+	padding-bottom:10px;
+	border: 1px solid yellow;
+	margin: 0 auto;
+	max-width: 1320px;
+	min-width: 1320px;
+}
+.q-section {
+	display: table-cell;
+	min-width: 250px;
+	max-width: 240px;	
+	padding: 5px;
+	padding-left:8px;
+	margin-left: 10px; 
+	margin-top: 10px;
+	border:1px solid blue;
+}
+.q-section-button {
+	font-size: 20px;
+	overflow-wrap: break-word;
+}
+</style>
 
+<br/> 
 <div class="container"><!-- open container -->
 	<div class="container-fluid"> <!-- open container-fluid -->
 		<div class="row"> <!-- open row -->
 			<ul class="header">
 			  <li><img src="/res/images/lgu-logo.png" alt="lgu logo" class="lgu-logo" style="width:80px;"></li>
 			  <li><img src="/res/images/etracs.png" alt="etracs logo" class="queue-logo"></li>
-			  <li style="width:62%;text-align:center;font-size:30px;">
-			  	${lguname ? lguname : ''}
-			  </li>
+			  <li></li>
 			  <li class="date">
 			    <img src="/res/images/rameses.png" alt="rameses logo" class="rameses-logo">
 			    <p id="clockbox"></p>
 			  </li>
 			</ul>
 		</div> <!-- close row -->
-	</div> <!-- close container-fluid -->
+	</div><!-- close container-fluid -->
+
+<div class="q-sections">
+<%selgroup.sections.each { s->%>
+<div class="q-section"> 			
+	<a class="q-section-button" r:context="queue" r:name="fetchNextNumber" r:param_sectionid="${s.objid}" /> 
+		<span>${s.title}</span>
+	</a>
+</div> 
+<%}%>
+
+<%selgroup.sections.each { s->%>
+<div class="q-section"> 			
+	<a class="q-section-button" r:context="queue" r:name="fetchNextNumber" r:param_sectionid="${s.objid}" /> 
+		<span>${s.title}</span>
+	</a>
+</div> 
+<%}%>
+</div>
 
 	<%groups.each { g-> %>		
 		<div class="row">
 	        <h1 class="page-header">${g.title}</h1>
 	    </div>
 		<div class="row"> <!-- open row -->
-			<div class="q-sections"> <!-- opens pliter -->
+			<div class="spliter"> <!-- opens pliter -->
 			<%g.sections.each { s->%>
-				<a class="q-section" r:context="queue" r:name="fetchNextNumber" r:param_sectionid="${s.objid}" >
-					<div class="q-section-title">${s.title}</div>
+		
+			<div class="screen3 resize6"> 			
+				<a class="k-button" r:context="queue" r:name="fetchNextNumber" r:param_sectionid="${s.objid}" /> 
+					<span>${s.title}</span>
 				</a>
+			</div> 
+		
 			<%}%>
 			</div> <!-- close spliter -->
 		</div> <!-- close row -->
 	<%}%>
-</div> <!-- close container -->
+
+</div><!-- close container -->
+
+
+
 
 <script>
 var qnpage = @register('/queuenumber') 

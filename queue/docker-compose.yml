@@ -40,3 +40,5 @@ services:
     volumes:
       - ./files/queue.pg:/apps/server/web/monitor.queue/files/queue.pg
       - ./files/queueing.pg:/apps/server/web/monitor.queue/files/queueing.pg
+      - ./images/lgu-logo.png:/apps/server/web/monitor.queue/res/images/lgu-logo.png
+      - ./css:/apps/server/web/monitor.queue/themes/default/css

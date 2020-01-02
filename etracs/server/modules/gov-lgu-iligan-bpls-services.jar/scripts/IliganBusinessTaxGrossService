@@ -4,7 +4,7 @@ import com.rameses.util.*;
 
 class IliganBusinessTaxGrossService  {
 
-	@ActiveDB('iligan_bpls') 
+	@ActiveDB('iligan_bp') 
 	def em; 
 
 	@ProxyMethod 

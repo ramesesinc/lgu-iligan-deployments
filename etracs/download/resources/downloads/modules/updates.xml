@@ -37,9 +37,8 @@ socketio.host=110.100.210.9:7080
 	<module file="custom/gov-lgu-iligan-treasury.jar" version="1.1"/>
 	<module file="custom/gov-lgu-iligan-main.jar" version="1.1"/>	
 	<module file="custom/gov-lgu-iligan.jar" version="1.65"/>
-	<module file="custom/anne-bpls-report.jar" version="2.09"/>
+	<module file="custom/anne-bpls-report.jar" version="2.10"/>
 	<module file="custom/bpfacility-client.jar" version="1.04"/>	
-	<module file="custom/rameses-gov-etracs-sre-iligan.jar" version="2.3"/>
 
 	<!-- rptis custom libraries -->
     <module file="custom/iligan-landtax-custom-billing.jar" version="1.02"/>

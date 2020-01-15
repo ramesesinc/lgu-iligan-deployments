@@ -33,6 +33,7 @@ services:
         max-size: "10m"
     env_file:
       - ./env.conf
+      - ../_custom/env.conf
       - ./video.conf
     ports:
       - "9980:8080"

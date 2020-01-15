@@ -34,7 +34,7 @@ services:
 
 
   etracs25-server:
-    image: ramesesinc/etracs25-server-city:255.01.002
+    image: ramesesinc/etracs25-server-city:255.02.001
     container_name: etracs25-server
     restart: always
     logging:
@@ -44,6 +44,7 @@ services:
         max-size: 10m
     env_file:
       - ./env.conf
+      - ../_custom/env.conf
     ports:
       - "8060:8060"
       - "8061:8061"

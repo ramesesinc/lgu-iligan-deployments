@@ -16,10 +16,10 @@ services:
     environment:
       TZ: "Asia/Manila"
     ports:
-      - "9999:9999"
+      - "9999:80"
     volumes:
       - ./proxy/conf.d:/etc/nginx/conf.d
-      - ./resources:/resources
+      - ../_custom/queue:/resources
 
 
   queue-server:
@@ -34,13 +34,12 @@ services:
     env_file:
       - ./env.conf
       - ../_custom/env.conf
-      - ./video.conf
     ports:
-      - "9960:8060"
       - "9980:8080"
       - "9970:8070"
+      - "9960:8060"
     volumes:
-      - ./files/queue.pg:/apps/server/web/monitor.queue/files/queue.pg
-      - ./files/queueing.pg:/apps/server/web/monitor.queue/files/queueing.pg
-      - ./images/lgu-logo.png:/apps/server/web/monitor.queue/res/images/lgu-logo.png
-      - ./css:/apps/server/web/monitor.queue/themes/default/css
+      - ../_custom/queue/files/queue.pg:/apps/server/web/monitor.queue/files/queue.pg
+      - ../_custom/queue/files/queueing.pg:/apps/server/web/monitor.queue/files/queueing.pg
+      - ../_custom/queue/lgu-logo.png:/apps/server/web/monitor.queue/res/images/lgu-logo.png
+      - ../_custom/queue/css:/apps/server/web/monitor.queue/themes/default/css

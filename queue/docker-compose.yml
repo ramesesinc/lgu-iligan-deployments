@@ -23,7 +23,7 @@ services:
 
 
   queue-server:
-    image: ramesesinc/queue-server:255.01.003
+    image: ramesesinc/queue-server:255.02.001
     container_name: queue-server
     restart: always
     logging: 
@@ -36,6 +36,7 @@ services:
       - ../_custom/env.conf
       - ./video.conf
     ports:
+      - "9960:8060"
       - "9980:8080"
       - "9970:8070"
     volumes:

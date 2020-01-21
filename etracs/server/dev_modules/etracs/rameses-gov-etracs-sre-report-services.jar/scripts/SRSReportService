@@ -118,7 +118,7 @@ class SRSReportService {
 		} 
 
 		if ( params.opthidenoactual.toString() == 'true') { 
-			accounts.removeAll( accounts.findAll{( it.amount == 0.0 )} ); 
+			accounts.removeAll( accounts.findAll{( it.amount == 0.0 && (it.target ? it.target : 0) == 0 )} ); 
 		} 
 
 		if ( params.type == 'itemaccount' ) { 

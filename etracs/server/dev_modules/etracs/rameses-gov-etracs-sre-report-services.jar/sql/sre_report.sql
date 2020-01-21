@@ -34,10 +34,9 @@ order by a.`level`, a.leftindex
 [getAcctTargets]
 select distinct 
 	a.objid as acctid, t.target 
-from account_item_mapping aim 
-	inner join account_incometarget t on t.itemid = aim.acctid 
-	inner join account a on a.objid = aim.acctid
-where aim.maingroupid = $P{maingroupid} 
+from account a 
+	inner join account_incometarget t on t.itemid = a.objid 
+where a.maingroupid = $P{maingroupid} 
 	and t.year = YEAR($P{startdate}) 
 	and t.target > 0 
 
@@ -45,7 +44,7 @@ where aim.maingroupid = $P{maingroupid}
 select t1.*, m.objid as acctid 
 from ( 
 	select fundid, itemid, itemcode, itemtitle, sum(amount) as amount 
-	from vw_income_summary a 
+	from vw_income_summary 
 	where remittancedate >= $P{startdate} 
 		and remittancedate <  $P{enddate} 
 		${filters} 
@@ -60,7 +59,7 @@ order by m.objid, t1.itemcode, t1.itemtitle
 select t1.*, m.objid as acctid 
 from ( 
 	select fundid, itemid, itemcode, itemtitle, sum(amount) as amount 
-	from vw_income_summary a 
+	from vw_income_summary 
 	where refdate >= $P{startdate} 
 		and refdate <  $P{enddate} 
 		${filters} 

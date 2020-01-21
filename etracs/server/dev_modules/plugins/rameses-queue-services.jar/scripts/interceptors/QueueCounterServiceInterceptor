@@ -4,11 +4,8 @@ import com.rameses.util.*;
 
 class QueueCounterServiceInterceptor {
 
-    @XConnection('ws_sender')
+    @XConnection('queue_ws_server')
     def wssender;
-
-	@XConnection("queue_poll")
-	def queue_poll;
 
 	@DataContext(value='queue_section', adapter='queue') 
 	def qs; 
@@ -89,18 +86,9 @@ class QueueCounterServiceInterceptor {
 			it.uuid = uuid.toLowerCase(); 
 			loadGroup( it ); 
 		}
-		self.notifyHttp( msgs ); 
 		self.notifyWs( msgs ); 
 	} 
 
-	@Async 
-	@ProxyMethod(local=true) 
-	public void notifyHttp( data ) { 
-		if ( !data ) return; 
-
-		def msgs = (data instanceof List? data : [data]); 
-		msgs.each{ queue_poll.send( it ) } 
-	} 
 	@Async 
 	@ProxyMethod(local=true) 
 	public void notifyWs( data ) { 

@@ -13,6 +13,7 @@ services:
         max-size: "10m"
     env_file:
       - ./env.conf
+      - ../_custom/env.conf
     ports:
       - "25:25"
 
@@ -43,6 +44,7 @@ services:
         max-size: "10m"
     env_file:
       - ./env.conf
+      - ../_custom/env.conf
     ports:
       - "8571:8571"
     links:

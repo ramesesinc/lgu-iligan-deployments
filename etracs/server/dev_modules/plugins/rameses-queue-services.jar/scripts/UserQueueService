@@ -4,11 +4,8 @@ import com.rameses.util.*;
 
 class UserQueueService { 
 
-    @XConnection('ws_sender')
+    @XConnection('queue_ws_server')
     def wssender;
-
-	@XConnection("queue_poll")
-	def queue_poll;
 
 	@DataContext(value='queue_group', adapter='queue') 
 	def qg; 
@@ -292,7 +289,6 @@ class UserQueueService {
 			data.formattedseriesno = formatSeriesNumber( data ); 
 			data.ticketno = data.formattedseriesno; 
 		} 
-		self.notifyHttp( data ); 
 		self.notifyWs( data ); 
 	} 
 
@@ -309,24 +305,6 @@ class UserQueueService {
 		} 
 	} 
 
-	@Async 
-	@ProxyMethod(local=true) 
-	public void notifyHttp( data ) { 
-		if ( data ) { 
-			queue_poll.send( data );
-
-			if ( data.type.toString().matches('TAKE_NUMBER|BUZZ_NUMBER') && data.ticketno ) { 
-				def buffer = new StringBuilder();
-				buffer.append('Ticket Number ') 
-				data.ticketno.toCharArray().each{
-					buffer.append(''+ it +', ');
-				}
-				buffer.append('Please proceed to counter ' + data.countercode );
-				data.msg = buffer.toString(); 
-				pagingSvc.send( data );  				
-			} 
-		} 
-	} 
 	@Async 
 	@ProxyMethod(local=true) 
 	public void notifyWs( data ) { 

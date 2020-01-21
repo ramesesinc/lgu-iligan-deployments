@@ -5,11 +5,8 @@ import java.rmi.server.UID;
 
 class QueueService { 
 
-    @XConnection('ws_sender')
+    @XConnection('queue_ws_server')
     def wssender;
-
-	@XConnection("queue_poll")
-	def queue_poll;
 
 	@DataContext(value='queue_group', adapter='queue') 
 	def qg; 

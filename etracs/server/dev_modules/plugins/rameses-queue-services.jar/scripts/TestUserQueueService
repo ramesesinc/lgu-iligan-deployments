@@ -2,11 +2,9 @@ import com.rameses.annotations.*;
 
 class TestUserQueueService {
 	
-    @XConnection('ws_sender')
+    @XConnection('queue_ws_server')
     def wssender;
 
-	@XConnection("queue_poll")
-	def queue_poll;
 
 	@Service 
 	def self; 
@@ -52,7 +50,6 @@ class TestUserQueueService {
 		} else {
 			data.formattedseriesno = formatSeriesNumber( data ); 	
 		} 		
-		self.notifyHttp( data ); 
 		self.notifyWs( data ); 
 	} 
 
@@ -69,13 +66,7 @@ class TestUserQueueService {
 		} 
 	} 	
 
-	@Async 
-	@ProxyMethod(local=true) 
-	public void notifyHttp( data ) { 
-		if ( data ) { 
-			queue_poll.send( data );  
-		} 
-	} 
+ 
 	@Async 
 	@ProxyMethod(local=true) 
 	public void notifyWs( data ) { 

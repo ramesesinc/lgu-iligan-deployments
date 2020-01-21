@@ -23,7 +23,7 @@ services:
 
 
   queue-server:
-    image: ramesesinc/queue-server:255.01.003
+    image: ramesesinc/queue-server:255.02.001
     container_name: queue-server
     restart: always
     logging: 
@@ -33,10 +33,11 @@ services:
         max-size: "10m"
     env_file:
       - ./env.conf
-      - ./video.conf
+      - ../_custom/env.conf
     ports:
       - "9980:8080"
       - "9970:8070"
+      - "9960:8060"
     volumes:
       - ./files/queue.pg:/apps/server/web/monitor.queue/files/queue.pg
       - ./files/queueing.pg:/apps/server/web/monitor.queue/files/queueing.pg

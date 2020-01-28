@@ -45,7 +45,7 @@ where aim.maingroupid = $P{maingroupid}
 select t1.*, m.objid as acctid 
 from ( 
 	select fundid, itemid, itemcode, itemtitle, sum(amount) as amount 
-	from vw_income_summary 
+	from vw_income_summary a 
 	where remittancedate >= $P{startdate} 
 		and remittancedate <  $P{enddate} 
 		${filters} 
@@ -60,7 +60,7 @@ order by m.objid, t1.itemcode, t1.itemtitle
 select t1.*, m.objid as acctid 
 from ( 
 	select fundid, itemid, itemcode, itemtitle, sum(amount) as amount 
-	from vw_income_summary 
+	from vw_income_summary a 
 	where refdate >= $P{startdate} 
 		and refdate <  $P{enddate} 
 		${filters} 

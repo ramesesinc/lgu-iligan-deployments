@@ -1,3 +1,0 @@
-provider=http
-http.host=${app_server_ip}:9980/poll
-http.action=queue_poll

@@ -21,7 +21,7 @@ services:
 
 
   etracs25-server:
-    image: ramesesinc/etracs25-server-city:255.02.004
+    image: ramesesinc/etracs25-server-city:255.02.005
     container_name: etracs25-server
     restart: always
     logging:

@@ -52,3 +52,5 @@ services:
       - ./dev_modules/rameses-gov-etracs-rptis-services.jar:/services/modules/etracs/rameses-gov-etracs-rptis-services.jar
       - ./dev_modules/rameses-gov-etracs-rptis-report-services.jar:/services/modules/etracs/rameses-gov-etracs-rptis-report-services.jar
       - ./dev_modules/rameses-gov-etracs-rptis-sms-services.jar:/services/modules/etracs/rameses-gov-etracs-rptis-sms-services.jar
+
+      - ./dev_modules/CreditMemoService:/services/modules/etracs/rameses-gov-treasury-services.jar/scripts/CreditMemoService

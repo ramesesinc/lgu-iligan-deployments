@@ -18,10 +18,11 @@ services:
     volumes:
       - ../download/conf.d:/etc/nginx/conf.d
       - ../download/resources:/resources
+      - ../_custom/static_files:/resources/others
 
 
   etracs25-server:
-    image: ramesesinc/etracs25-server-city:255.02.005
+    image: ramesesinc/etracs25-server-city:255.02.007
     container_name: etracs25-server
     restart: always
     logging:
@@ -43,14 +44,8 @@ services:
       - ./modules:/apps/etracs25/modules
       - ../_custom/lgu-module:/apps/etracs25/modules/ext/lgu-module
 
-      - ./dev_modules/rameses-gov-etracs-rptis-city-services.jar:/services/modules/etracs/rameses-gov-etracs-rptis-city-services.jar
-      - ./dev_modules/rameses-gov-etracs-rptis-coordinator-services.jar:/services/modules/etracs/rameses-gov-etracs-rptis-coordinator-services.jar
-      - ./dev_modules/rameses-gov-etracs-rptis-landtax-online-services.jar:/services/modules/etracs/rameses-gov-etracs-rptis-landtax-online-services.jar
-      - ./dev_modules/rameses-gov-etracs-rptis-landtax-services.jar:/services/modules/etracs/rameses-gov-etracs-rptis-landtax-services.jar
-      - ./dev_modules/rameses-gov-etracs-rptis-landtax-report-services.jar:/services/modules/etracs/rameses-gov-etracs-rptis-landtax-report-services.jar
-      - ./dev_modules/rameses-gov-etracs-rptis-online-services.jar:/services/modules/etracs/rameses-gov-etracs-rptis-online-services.jar
-      - ./dev_modules/rameses-gov-etracs-rptis-services.jar:/services/modules/etracs/rameses-gov-etracs-rptis-services.jar
-      - ./dev_modules/rameses-gov-etracs-rptis-report-services.jar:/services/modules/etracs/rameses-gov-etracs-rptis-report-services.jar
-      - ./dev_modules/rameses-gov-etracs-rptis-sms-services.jar:/services/modules/etracs/rameses-gov-etracs-rptis-sms-services.jar
+      - ./dev_modules/rptis:/rptis
+      - ./dev_modules/rptis/etracs_rptis.conf:/apps/etracs25/modules.conf.d/etracs_rptis.conf
 
-      - ./dev_modules/CreditMemoService:/services/modules/etracs/rameses-gov-treasury-services.jar/scripts/CreditMemoService
+      - ./dev_modules/gov:/gov
+      - ./dev_modules/gov/etracs__gov.conf:/apps/etracs25/modules.conf.d/etracs__gov.conf

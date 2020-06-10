@@ -49,6 +49,9 @@ entity.app.context=etracs25
 	<module file="custom/gov-lgu-iligan-rptis.jar" version="1.4"/>
 	<module file="custom/rptdelinquentnopenalty.jar" version= "1.2"/>
 
+	<!-- 3rd party libs -->
+	<module file="libs/commons-net-3.5.jar" version="2.50"/>
+
 	<!-- core -->
 	<module file="core/osiris2-client-themes.jar" version="2.50"/>
 	<module file="core/osiris2-client-ui.jar" version="2.50"/>

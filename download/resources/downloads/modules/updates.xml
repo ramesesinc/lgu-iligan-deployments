@@ -1,6 +1,6 @@
 <app>
 <env>
-app.title=ETRACS 2.5 build 05 20200206_1718 (City of Iligan)
+app.title=ETRACS 2.5 build 05 20200209 (City of Iligan)
 app.host=110.100.210.9:8070
 app.cluster=osiris3
 app.context=etracs25
@@ -62,7 +62,7 @@ entity.app.context=etracs25
 	<module file="core/rameses-common2.jar" version="2.50"/>
 	<module file="core/rameses-custom-impl.jar" version="2.50"/>
 	<module file="core/rameses-jdbc16.jar" version="2.50"/>
-	<module file="core/rameses-seti.jar" version="2.51"/>
+	<module file="core/rameses-seti.jar" version="2.52"/>
  
 	<!-- shared -->
 	<module file="shared/client-system.jar" version="2.50"/>
@@ -95,9 +95,9 @@ entity.app.context=etracs25
 	<!-- treasury -->
 	<module file="treasury/rameses-treasury-common.jar" version="2.51"/>
 	<module file="treasury/rameses-gov-depositslip.jar" version="2.50"/>
-	<module file="treasury/rameses-gov-treasury.jar" version="2.52"/>
-	<module file="treasury/rameses-gov-treasury-report.jar" version="2.52"/>
-	<module file="treasury/rameses-gov-treasury-tool.jar" version="2.50"/>
+	<module file="treasury/rameses-gov-treasury.jar" version="2.53"/>
+	<module file="treasury/rameses-gov-treasury-report.jar" version="2.53"/>
+	<module file="treasury/rameses-gov-treasury-tool.jar" version="2.51"/>
 
 	<!-- bpls -->
 	<module file="bpls/rameses-gov-etracs-bpls.jar" version="2.50"/>

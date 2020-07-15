@@ -21,7 +21,7 @@ entity.app.context=etracs25
 </env>
 <modules> 
 	<!-- custom -->
-	<module file="custom/gov-lgu-iligan-af56.jar" version="1.03"/>
+	<module file="custom/gov-lgu-iligan-af56.jar" version="1.04"/>
 	<module file="custom/gov-lgu-iligan-rptis-report-taxdec.jar" version="1.5"/>
 	<module file="custom/gov-iligan-rptis-report-faases.jar" version="1.2"/>
 	<module file="custom/gov-lgu-iligan-rptis-certiciation.jar" version="1.1"/>

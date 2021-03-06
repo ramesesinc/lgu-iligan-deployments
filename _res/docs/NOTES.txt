@@ -39,4 +39,4 @@ docker pull ramesesinc/etracs-server-city:2.5.03.02.01
 
 
 [GitHub Repo]
-https://github.com/ramesesinc/lgu-iligan-deployments.git
+git clone https://github.com/ramesesinc/lgu-iligan-deployments.git

@@ -3,4 +3,4 @@ app:
    env:
 
    modules:
-      - { order: 270, version: 2.55, file: "modules/waterworks/rameses-gov-etracs-waterworks-collection-proxy.jar" }
+      - { order: 270, version: 1.01, file: "modules/waterworks/rameses-gov-etracs-waterworks-collection-proxy.jar" }

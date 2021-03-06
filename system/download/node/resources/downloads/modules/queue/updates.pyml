@@ -3,4 +3,4 @@ app:
    env:
 
    modules:
-      - { order: 260, version: 2.50, file: "modules/queue/rameses-queueing.jar" }
+      - { order: 260, version: 2.51, file: "modules/queue/rameses-queueing.jar" }

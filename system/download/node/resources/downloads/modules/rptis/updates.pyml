@@ -8,4 +8,4 @@ app:
       - { order: 242, version: 2.55, file: "modules/rptis/rameses-gov-etracs-rptis.jar" }
       - { order: 243, version: 2.52, file: "modules/rptis/rameses-gov-etracs-rptis-report.jar" }
       - { order: 243, version: 2.51, file: "modules/rptis/rameses-gov-etracs-rptis-transmittal.jar" }
-      - { order: 244, version: 2.52, file: "modules/rptis/rameses-gov-etracs-rptis-city.jar" 
+      - { order: 244, version: 2.52, file: "modules/rptis/rameses-gov-etracs-rptis-city.jar" }

@@ -335,7 +335,7 @@ CREATE TABLE sys_email_queue (
   state int NOT NULL,
   reportid varchar(50) NULL,
   dtsent datetime NOT NULL,
-  to varchar(255) NOT NULL,
+  [to] varchar(255) NOT NULL,
   subject varchar(255) NOT NULL,
   message varchar(MAX) NOT NULL,
   errmsg varchar(MAX) NULL,

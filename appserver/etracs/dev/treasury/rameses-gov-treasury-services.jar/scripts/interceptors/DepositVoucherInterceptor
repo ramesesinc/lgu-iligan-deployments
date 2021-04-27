@@ -2,14 +2,14 @@ import com.rameses.annotations.*;
 
 class DepositVoucherInterceptor {
 
-	@Service("NumberService")
-	def numSvc;
-
 	@DataContext("depositvoucher")
 	def dvEm;
 
 	@DataContext("depositvoucher_fund")
 	def dvfEm;
+
+	@DataContext("depositslip")
+	def dsEm;
 
 	@DataContext("collectionvoucher")
 	def cvEm;
@@ -17,55 +17,6 @@ class DepositVoucherInterceptor {
 	@DataContext("checkpayment")
 	def checkEm;
 
-
-	@After(pattern="QueryService.getNodeList", eval="#{ args[0]._schemaname == 'depositvoucher' }")
-	public void getNodes( evt ) { 
-		def x = evt.args[0];
-		def result = evt.result;
-		result << [  title: 'Open', state:'OPEN' ];
-		result << [  title: 'Posted', state:'POSTED' ];
-		result << [  title: 'Cancelled', state:'CANCELLED' ];
-	}
-
-	@Before(pattern="QueryService.getList", eval="#{ args[0]._schemaname == 'depositvoucher' }")
-	public void beforeGetList( evt ) {
-		def o = evt.args[0];
-		if ( !o.node?.state ) return;
-
-		def str = "state = :state";
-		def m = [ state: o.node.state ]; 
-
-		if ( o.where ) {
-			o.where[0] = str + " AND " + o.where[0];	
-			o.where[1].putAll( m );
-		}
-		else {
-			o.where = [str, m];
-		} 
-
-		def orderbys = [];
-		if ( o.node.state == 'OPEN' ) {
-			orderbys << "controldate, dtcreated";
-		} else {
-			orderbys << "controldate desc, dtcreated desc"; 
-		}
-
-		if ( o.orderBy ) orderbys << o.orderBy; 
-		if ( orderbys ) o.orderBy = orderbys.join(', '); 
-	}	
-
-	@After(pattern="PersistenceService.read", eval="#{ args[0]._schemaname == 'depositvoucher' }" )
-	public void afterRead(def evt) {
-		def p = evt.result;
-		/*
-		if( p.amount < 1 ) { 
-			def amount = Long.parseLong( p.amount.toString().split("\\.")[1] )
-			p.amountinwords = numSvc.doubleToWords( amount ).toUpperCase() + " CENTAVOS";
-		} else {
-			p.amountinwords = numSvc.doubleToWords( p.amount ).toUpperCase() + " PESOS ONLY";
-		}
-		*/
-	}
 
 	@Before(pattern="PersistenceService.removeEntity", eval="#{ args[0]._schemaname == 'depositvoucher' }" )
 	public void beforeRemove( evt ) {
@@ -86,10 +37,31 @@ class DepositVoucherInterceptor {
 
 		uu.clear(); 
 		uu.state = 'CANCELLED'; 
-		dvEm.find([ objid: param.objid ]).update( uu );
+		dvEm.find([ objid: param.objid ]).update( uu ); 
+		dvfEm.find([ parentid: param.objid ]).update( uu ); 
+		dvfEm.cancelDepositSlips([ depositvoucherid: param.objid ]); 
 
 		// inject a temporary findBy data, so that the transaction will not be deleted 
 		// we will only marked the transction as CANCELLED  
 		param.findBy = [ objid: 'CANCELLED-'+ new java.rmi.server.UID() ]; 
 	}
+
+	@After(pattern="DepositVoucherService.post")
+	public void afterPost( evt ) {
+		def param = evt.args[0]; 
+
+		def dv = dvEm.find([ objid: param.objid ]).select('objid,controlno,state').first(); 
+		if ( !dv ) return; 
+
+		if ( dv.state.toString().toUpperCase() != 'POSTED' ) {
+			throw new Exception('Deposit Voucher must be posted first'); 
+		}
+
+		def slip = dvfEm.findPendingDepositSlip([ depositvoucherid: param.objid ]); 
+		if ( slip ) { 
+			throw new Exception('There are still deposit slips for '+ slip.fund.title +' that needs to be validated'); 
+		} 
+
+		dvfEm.find([ parentid: dv.objid ]).update([ state: dv.state ]); 
+	} 
 }

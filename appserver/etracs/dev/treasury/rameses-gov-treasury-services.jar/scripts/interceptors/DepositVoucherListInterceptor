@@ -1,13 +1,9 @@
 import com.rameses.annotations.*;
 
-class DepositVoucherFundListInterceptor {
+class DepositVoucherListInterceptor {
 
-	@Service("NumberService")
-	def numSvc;
-
-	
-	@After(pattern="QueryService.getNodeList", eval="#{ args[0]._schemaname == 'depositvoucher_fund' }")
-	public void afterGetNodes( evt ) { 
+	@After(pattern="QueryService.getNodeList", eval="#{ args[0]._schemaname == 'depositvoucher' }")
+	public void getNodes( evt ) { 
 		def x = evt.args[0];
 		def result = evt.result;
 		result << [  title: 'Open', state:'OPEN' ];
@@ -15,10 +11,10 @@ class DepositVoucherFundListInterceptor {
 		result << [  title: 'Cancelled', state:'CANCELLED' ];
 	}
 
-	@Before(pattern="QueryService.getList", eval="#{ args[0]._schemaname == 'depositvoucher_fund' }")
+	@Before(pattern="QueryService.getList", eval="#{ args[0]._schemaname == 'depositvoucher' }")
 	public void beforeGetList( evt ) {
 		def o = evt.args[0];
-		if( !o.node?.state ) return;
+		if ( !o.node?.state ) return;
 
 		def str = "state = :state";
 		def m = [ state: o.node.state ]; 
@@ -33,13 +29,12 @@ class DepositVoucherFundListInterceptor {
 
 		def orderbys = [];
 		if ( o.node.state == 'OPEN' ) {
-			orderbys << "parent.controldate, parent.dtcreated";
+			orderbys << "controldate, dtcreated";
 		} else {
-			orderbys << "parent.controldate desc, parent.dtcreated desc"; 
+			orderbys << "controldate desc, dtcreated desc"; 
 		}
 
 		if ( o.orderBy ) orderbys << o.orderBy; 
-		if ( orderbys ) o.orderBy = orderbys.join(', '); 		
+		if ( orderbys ) o.orderBy = orderbys.join(', '); 
 	}	
-
 }

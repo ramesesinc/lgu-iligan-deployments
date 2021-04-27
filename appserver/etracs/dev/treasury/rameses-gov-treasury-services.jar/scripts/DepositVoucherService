@@ -139,7 +139,7 @@ class DepositVoucherService  {
 	@ProxyMethod
 	public def post( def o ) {
 		//check first if all checks associated with the deposit voucher is accounted for
-		def chkList = chkPmtEm.find( [depositvoucherid : o.objid ] ).where( " depositslipid IS NULL " ).list();  	
+		def chkList = chkPmtEm.find([ depositvoucherid : o.objid ]).where(" depositslipid IS NULL").list();  	
 		if( chkList ) {
 			def str = chkList*.refno.join(",");
 			throw new Exception("All checks associated with this deposit voucher must be deposited. Please review the ff checks: \n" + str )
@@ -157,8 +157,8 @@ class DepositVoucherService  {
 			throw new Exception("All deposit amount deposited and transferred are not balanced");
 		}
 		//retrieve the depost voucher
-		def m = [state:'POSTED'];
-		dvEm.find( [objid: o.objid]).update( m );
+		def m = [ state: 'POSTED' ];
+		dvEm.find([ objid: o.objid ]).update( m );
 		return m;
 	}
 

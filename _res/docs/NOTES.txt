@@ -1,5 +1,5 @@
 [Ubuntu Server]
-IP   : 110.100.210.9
+IP   : [110.100.210.9/24, 110.100.211.9/24]
 User : raoul
 Pass : beavios
 

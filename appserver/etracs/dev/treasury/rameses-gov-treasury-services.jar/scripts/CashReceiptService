@@ -157,6 +157,13 @@ class CashReceiptService  {
 		if(p.subcollector?.objid ) p.state = "DELEGATED"
 		if(p.batchcapture) p.state = "CAPTURED"
 
+		if ( p.paidby != null && p.paidby.toString().length() > 800 ) {
+			p.paidby = p.paidby.toString().substring(0, 800);
+		}
+		if ( p.payer.name != null && p.payer.name.toString().length() > 800 ) {
+			p.payer.name = p.payer.name.toString().substring(0, 800);
+		}
+
 		cashreceiptEm.create( p );
 		afControlSvc.updateNextSeries( p );
 

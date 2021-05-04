@@ -30,4 +30,5 @@ services:
       - ../../_custom/output:/apps/server/output
       - ../../_custom/fileserver:/fileserver
 
+      - ./dev/lib/rameses-websocket2.jar:/apps/server/lib/rameses-websocket2.jar
       - ./dev/treasury/rameses-gov-treasury-services.jar:/services/modules/treasury/rameses-gov-treasury-services.jar
